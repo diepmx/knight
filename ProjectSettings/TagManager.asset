@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Door
+  - Enemy
+  - Boss
+  - PlayerUpdate
+  - Stairs
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Floor
+    uniqueID: 3596092605
+    locked: 0
+  - name: Random Tilemap
+    uniqueID: 1937647409
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Walls Level 1
+    uniqueID: 4152920947
+    locked: 0
+  - name: Environment
+    uniqueID: 511366181
+    locked: 0
+  - name: PNJ
+    uniqueID: 842991165
+    locked: 0
+  - name: Enemies
+    uniqueID: 4021008565
+    locked: 0
+  - name: Pickups
+    uniqueID: 3294834499
+    locked: 0
+  - name: Weapons
+    uniqueID: 969357445
+    locked: 0
+  - name: Player
+    uniqueID: 3635820929
+    locked: 0
+  - name: Walls Level 2
+    uniqueID: 1102558821
+    locked: 0
+  - name: Walls Level 3
+    uniqueID: 3877435617
+    locked: 0
+  - name: Numbers
+    uniqueID: 988325787
+    locked: 0
+  - name: Title
+    uniqueID: 1828480395
+    locked: 0
+  - name: Particles
+    uniqueID: 1126355001
+    locked: 0
+  - name: Crossfade
+    uniqueID: 1651753799
+    locked: 0
+  - name: UI
+    uniqueID: 386736545
+    locked: 0
