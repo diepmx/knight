@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4036059516065275338}
   - component: {fileID: 4789212886425291470}
   m_Layer: 0
-  m_Name: Slug Light
+  m_Name: Dark Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.75
-  m_Color: {r: 0.2901961, g: 0.654902, b: 0.27450982, a: 1}
+  m_Color: {r: 0.38823533, g: 0.09411766, b: 0.41960788, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1142466819745634821}
   - component: {fileID: 5206145790785277953}
   m_Layer: 0
-  m_Name: Slug Sprite
+  m_Name: Dark Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8bb7f9166cf96364abc7de338e3d70df, type: 3}
+  m_Sprite: {fileID: -302980681, guid: 57cb54ea17bd1534da8a8b1e31753a21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 4695783421626324680}
   - component: {fileID: 5741741082548919271}
   m_Layer: 0
-  m_Name: Slug
+  m_Name: Dark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

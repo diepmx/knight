@@ -34,14 +34,16 @@ public class DialogueManager : MonoBehaviour
     private void Awake()
     {
         // Đảm bảo chỉ có một instance của DialogueManager
-        if (instance != null)
+        if (instance != null && instance != this)
         {
-            Debug.LogWarning("Error message");
+            Debug.LogWarning("Multiple instances of DialogueManager detected. Destroying the new instance.");
+            Destroy(gameObject);
             return;
         }
 
         // Thiết lập instance duy nhất của DialogueManager
         instance = this;
+        DontDestroyOnLoad(gameObject);
 
         // Khởi tạo Queue lưu các câu thoại
         sentences = new Queue<string>();
@@ -50,6 +52,12 @@ public class DialogueManager : MonoBehaviour
     // Bắt đầu một đoạn hội thoại mới
     public void StartDialogue(Dialogue dialogue)
     {
+        if (animator == null || npcImage == null || nameText == null || dialogueText == null)
+        {
+            Debug.LogError("DialogueManager is missing UI components.");
+            return;
+        }
+
         isDialogueOpen = true;
         animator.SetBool("isOpen", true); // Bật animation mở hộp thoại
 
