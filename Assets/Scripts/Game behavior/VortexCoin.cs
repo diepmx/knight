@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VortexCoin : MonoBehaviour
+public class VortexCoin : MonoBehaviour 
 {
     // Tham chiếu đến script PlayerController
-    private PlayerController player;
+    private CharacterController player;
     // Lưu lại phạm vi nhặt vật phẩm ban đầu của người chơi
     private float originalPickupRange;
     // Tham chiếu đến component Animator
@@ -19,7 +19,7 @@ public class VortexCoin : MonoBehaviour
     void Start()
     {
         // Gán PlayerController hiện tại vào biến player
-        player = PlayerController.instance;
+        player = CharacterController.instance;
         // Lưu phạm vi nhặt vật phẩm ban đầu của người chơi
         originalPickupRange = player.pickupRange;
         // Lấy component Animator từ VortexCoin
@@ -29,10 +29,10 @@ public class VortexCoin : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Kiểm tra nếu người chơi va chạm với VortexCoin và rương đang đóng
-        if (collision.CompareTag("Player") && PlayerController.instance.isChestClosed)
+        if (collision.CompareTag("Player") && CharacterController.instance.isChestClosed)
         {
             // Mở rương và tăng phạm vi nhặt vật phẩm của người chơi
-            PlayerController.instance.isChestClosed = false;
+            CharacterController.instance.isChestClosed = false;
             player.pickupRange = increasePickupRange;
 
             // Kích hoạt animation nếu có Animator
@@ -55,7 +55,7 @@ public class VortexCoin : MonoBehaviour
         // Đặt lại phạm vi nhặt vật phẩm của người chơi, hủy VortexCoin và đặt lại trạng thái rương
         player.pickupRange = originalPickupRange;
         Destroy(gameObject);
-        PlayerController.instance.isChestClosed = true;
-        PlayerController.instance.isChestSpawned = false;
+        CharacterController.instance.isChestClosed = true;
+        CharacterController.instance.isChestSpawned = false;
     }
 }

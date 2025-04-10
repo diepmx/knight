@@ -9,11 +9,12 @@ TagManager:
   - Boss
   - PlayerUpdate
   - Stairs
+  - PlayerInScene
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wall
   - Water
   - UI
   - Enemy

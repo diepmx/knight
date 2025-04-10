@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3283939043182683101}
   - component: {fileID: 1259462013094766894}
   - component: {fileID: 1161289860516027756}
+  - component: {fileID: 2166091209347367421}
   m_Layer: 0
   m_Name: Elf
   m_TagString: Untagged
@@ -169,7 +170,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 37964
+  m_InstanceId: 95282
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.5, z: 0}
@@ -225,6 +226,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2166091209347367421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471342011136961468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be9cd8e6ccadfd488fdcdec161a69d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7382430067788648294}
+  spriteRenderer: {fileID: 4465557537039028281}
+  footParticles: []
+  speed: 3
+  speedMultiplier: 1.1
+  pickupRange: 1.5
+  pickupRangeMultiplier: 1.1
+  playerDistance: 0
+  maxWeapons: 3
+  unassignedWeapons: []
+  assignedWeapons: []
+  listWeapons: []
+  fullyLevelledWeapons: []
+  isChestClosed: 1
+  isChestSpawned: 0
+  dialogueTriggers: []
 --- !u!1 &1364658013684998404
 GameObject:
   m_ObjectHideFlags: 0

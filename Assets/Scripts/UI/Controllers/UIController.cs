@@ -71,7 +71,7 @@ public class UIController : MonoBehaviour
     private void Update()
     {
         // Cập nhật các thông tin thống kê
-        totalPlayerDistance.text = "PLAYER DISTANCE: " + PlayerController.instance.playerDistance.ToString("000000");
+        totalPlayerDistance.text = "PLAYER DISTANCE: " + CharacterController.instance.playerDistance.ToString("000000");
         totalDamageReceived.text = "DAMAGE RECEIVED: " + PlayerHealthController.instance.totalDamage.ToString("000000");
         totalEnemiesSpawned.text = "ENEMIES SPAWNED: " + enemiesSpawned.ToString("000000");
         totalEnemiesDefeated.text = "ENEMIES DEFEATED: " + enemiesDefeated.ToString("000000");

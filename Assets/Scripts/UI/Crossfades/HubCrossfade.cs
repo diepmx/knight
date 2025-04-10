@@ -59,15 +59,14 @@ public class HubCrossfade : MonoBehaviour
     // Coroutine để tải màn chơi tiếp theo với hiệu ứng crossfade
     IEnumerator loadLevel(int levelIndex)
     {
-        // Kích hoạt hiệu ứng crossfade
         crossfadeAnimator.SetTrigger("Start");
 
-        // Chờ trong khoảng thời gian chuyển cảnh
         yield return new WaitForSeconds(transitionTime);
 
-        // Tải màn chơi tiếp theo
+       
         SceneManager.LoadScene(levelIndex);
     }
+
 
     // Coroutine to fade out the background music.
     // Coroutine để giảm dần âm thanh nhạc nền

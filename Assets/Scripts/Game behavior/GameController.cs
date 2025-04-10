@@ -19,10 +19,10 @@ public class GameController : MonoBehaviour
 
     [Space(10)]
     // Thời gian tồn tại của game trước khi Boss xuất hiện (600 giây = 10 phút)
-    public float endTimer = 30f;
+    public float endTimer = 600f;
 
     // Tham chiếu đến người chơi
-    private PlayerController player;
+    private CharacterController player;
     // Bộ đếm thời gian trong game
     private float timer;
     // Thời gian chơi tốt nhất được ghi nhận
@@ -53,9 +53,18 @@ public class GameController : MonoBehaviour
     void Start()
     {
         gameActive = true;
-        // Lấy tham chiếu đến người chơi
-        player = PlayerHealthController.instance.GetComponent<PlayerController>();
+
+        if (PlayerHealthController.instance != null)
+        {
+            GameObject playerObject = PlayerHealthController.instance.gameObject;
+            player = playerObject.GetComponent<CharacterController>();
+        }
+        else
+        {
+            Debug.LogWarning("PlayerHealthController.instance is null in GameController.Start()");
+        }
     }
+
 
     void Update()
     {

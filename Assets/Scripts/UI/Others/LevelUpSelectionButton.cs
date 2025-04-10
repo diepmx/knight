@@ -65,7 +65,7 @@ public class LevelUpSelectionButton : MonoBehaviour
             else
             {
                 // Nếu vũ khí không hoạt động, thêm nó vào vũ khí của người chơi
-                PlayerController.instance.AddWeapon(assignedWeapon);
+                CharacterController.instance.AddWeapon(assignedWeapon);
             }
 
             // Đóng bảng nâng cấp và tiếp tục trò chơi

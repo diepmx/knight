@@ -30,8 +30,8 @@ public class Weapon : MonoBehaviour
             if (weaponLevel >= stats.Count - 1)
             {
                 // Thêm vũ khí đã nâng cấp hoàn toàn vào danh sách và loại bỏ khỏi vũ khí đã được chỉ định.
-                PlayerController.instance.fullyLevelledWeapons.Add(this);
-                PlayerController.instance.assignedWeapons.Remove(this);
+                CharacterController.instance.fullyLevelledWeapons.Add(this);
+                CharacterController.instance.assignedWeapons.Remove(this);
             }
         }
     }

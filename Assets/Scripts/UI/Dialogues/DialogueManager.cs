@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
 
         // Thiết lập instance duy nhất của DialogueManager
         instance = this;
-        DontDestroyOnLoad(gameObject);
+        
 
         // Khởi tạo Queue lưu các câu thoại
         sentences = new Queue<string>();

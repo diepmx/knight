@@ -23,6 +23,6 @@ public class PlayerSpeed : Weapon
     public void UpgradeMovespeed()
     {
         // Gọi PlayerController để nâng cấp tốc độ di chuyển.
-        PlayerController.instance.SpeedLevelUp();
+        CharacterController.instance.SpeedLevelUp();
     }
 }

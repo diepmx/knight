@@ -23,6 +23,6 @@ public class PlayerPickupRange : Weapon
     public void UpgradePickupRange()
     {
         // Gọi PlayerController để nâng cấp phạm vi nhặt vật phẩm.
-        PlayerController.instance.PickupRangeLevelUp();
+        CharacterController.instance.PickupRangeLevelUp();
     }
 }

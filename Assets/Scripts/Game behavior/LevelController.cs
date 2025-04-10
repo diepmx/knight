@@ -73,10 +73,10 @@ public class LevelController : MonoBehaviour
     public void SpawnChest(Vector3 position)
     {
         // Kiểm tra nếu rương chưa được sinh ra trước đó
-        if (PlayerController.instance.isChestSpawned == false)
+        if (CharacterController.instance.isChestSpawned == false)
         {
             // Đánh dấu rằng rương đã được sinh ra
-            PlayerController.instance.isChestSpawned = true;
+            CharacterController.instance.isChestSpawned = true;
             Instantiate(vortex, position, Quaternion.identity);
         }
     }
@@ -112,7 +112,7 @@ public class LevelController : MonoBehaviour
 
         // Tạo danh sách vũ khí có sẵn để nâng cấp
         List<Weapon> availableWeapons = new List<Weapon>();
-        availableWeapons.AddRange(PlayerController.instance.assignedWeapons);
+        availableWeapons.AddRange(CharacterController.instance.assignedWeapons);
 
         // Chọn một vũ khí trong danh sách để nâng cấp
         if (availableWeapons.Count > 0)
@@ -123,9 +123,9 @@ public class LevelController : MonoBehaviour
         }
 
         // Nếu số lượng vũ khí hiện có chưa đạt tối đa, thêm vũ khí chưa được sử dụng
-        if (PlayerController.instance.assignedWeapons.Count + PlayerController.instance.fullyLevelledWeapons.Count < PlayerController.instance.maxWeapons)
+        if (CharacterController.instance.assignedWeapons.Count + CharacterController.instance.fullyLevelledWeapons.Count < CharacterController.instance.maxWeapons)
         {
-            availableWeapons.AddRange(PlayerController.instance.unassignedWeapons);
+            availableWeapons.AddRange(CharacterController.instance.unassignedWeapons);
         }
 
         // Chọn thêm các vũ khí khác để bổ sung vào danh sách nâng cấp

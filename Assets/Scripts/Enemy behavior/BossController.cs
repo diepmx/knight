@@ -39,7 +39,7 @@ public class BossController : MonoBehaviour
     {
         // Khởi tạo các thành phần và tìm người chơi ngay khi trò chơi bắt đầu
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        target = FindObjectOfType<PlayerController>().transform;
+        target = FindObjectOfType<CharacterController>().transform;
         animator = GetComponentInChildren<Animator>();
         // Ghi nhớ vị trí ban đầu của người chơi
         playerLastPosition = target.position;

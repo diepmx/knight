@@ -4,48 +4,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : CharacterController
 {
-    public static PlayerController instance;
+    public Transform GetTransform()
+    {
+        return transform;
+    }
+  
 
-    [Space(10)]
-    public Animator animator;
-    public SpriteRenderer spriteRenderer;
-    public List<ParticleSystem> footParticles;
-
-    [Space(10)]
-    public float speed = 3f;
-    public float speedMultiplier = 1.1f;
-
-    [Space(10)]
-    public float pickupRange = 1.5f;
-    public float pickupRangeMultiplier = 1.1f;
-
-    [Space(10)]
-    public float playerDistance;
-
-    [Space(10)]
-    public int maxWeapons = 3;
-    public List<Weapon> unassignedWeapons;
-    public List<Weapon> assignedWeapons;
-    public List<Weapon> listWeapons;
-
-    [HideInInspector]
-    public List<Weapon> fullyLevelledWeapons = new List<Weapon>();
-
-    [HideInInspector]
-    public bool isChestClosed = true;
-    [HideInInspector]
-    public bool isChestSpawned = false;
-
-    [HideInInspector]
-    public List<DialogueTrigger> dialogueTriggers = new List<DialogueTrigger>();
-
+   
     Vector3 movement;
     Vector2 lastMovementDirection = Vector2.down; // Hướng cuối cùng khi idle
 
-    private void Awake()
-    {
-        instance = this;
-    }
+  
 
     void Start()
     {
@@ -142,26 +111,5 @@ public class PlayerController : CharacterController
         }
     }
 
-    public void AddWeapon(Weapon weaponToAdd)
-    {
-        weaponToAdd.gameObject.SetActive(true);
-        assignedWeapons.Add(weaponToAdd);
-
-        if (weaponToAdd.tag != "PlayerUpdate")
-        {
-            listWeapons.Add(weaponToAdd);
-        }
-
-        unassignedWeapons.Remove(weaponToAdd);
-    }
-
-    public void SpeedLevelUp()
-    {
-        speed *= speedMultiplier;
-    }
-
-    public void PickupRangeLevelUp()
-    {
-        pickupRange *= pickupRangeMultiplier;
-    }
+    
 }

@@ -28,6 +28,7 @@ public class PlayerHealthController : MonoBehaviour
     {
         // Đảm bảo chỉ có một instance của PlayerHealthController.
         instance = this;
+        Debug.Log("PlayerHealthController.Awake() được gọi");
     }
 
     void Start()

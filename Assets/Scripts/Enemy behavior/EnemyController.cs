@@ -39,9 +39,19 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        // Tìm người chơi trong scene và gán làm mục tiêu
-        target = FindObjectOfType<PlayerController>().transform;
+        if (rigidbody2d == null)
+            rigidbody2d = GetComponent<Rigidbody2D>();
+
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (CurrentPlayerManager.Instance != null && CurrentPlayerManager.Instance.currentCharacter != null)
+        {
+            SetTarget(CurrentPlayerManager.Instance.currentCharacter);
+        }
     }
+
+
 
     void Update()
     {
@@ -64,7 +74,15 @@ public class EnemyController : MonoBehaviour
         }
 
         // Di chuyển kẻ địch về phía người chơi
-        rigidbody2d.velocity = (target.position - transform.position).normalized * moveSpeed;
+        if (target != null)
+        {
+            rigidbody2d.velocity = (target.position - transform.position).normalized * moveSpeed;
+            FlipTowardsPlayer();
+        }
+        else
+        {
+            rigidbody2d.velocity = Vector2.zero;
+        }
 
         // Cập nhật hướng quay mặt của sprite
         FlipTowardsPlayer();
@@ -146,5 +164,10 @@ public class EnemyController : MonoBehaviour
         {
             knockBackCounter = knockBackTime;
         }
+    }
+    public void SetTarget(Transform newTarget)
+    {
+        target = newTarget;
+        Debug.Log(gameObject.name + " now targets " + newTarget.name);
     }
 }

@@ -13,7 +13,7 @@ public class ExperiencePickup : MonoBehaviour
     public float lifeDuration = 60f;
 
     // Tham chiếu đến script PlayerController
-    private PlayerController player;
+    private CharacterController player;
     // Cờ đánh dấu xem vật phẩm có đang di chuyển về phía người chơi không
     private bool movingToPlayer;
     // Bộ đếm thời gian giữa các lần kiểm tra khoảng cách
@@ -24,7 +24,7 @@ public class ExperiencePickup : MonoBehaviour
     void Start()
     {
         // Gán tham chiếu đến người chơi
-        player = PlayerHealthController.instance.GetComponent<PlayerController>();
+        player = PlayerHealthController.instance.GetComponent<CharacterController>();
         // Khởi tạo bộ đếm thời gian tồn tại
         lifeTimer = lifeDuration;
     }
