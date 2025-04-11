@@ -13,12 +13,14 @@ public class EnemyManager : MonoBehaviour
 
     IEnumerator WaitThenInitEnemies()
     {
-        // Đợi tới khi ActiveCharacter đã gán
-        yield return new WaitUntil(() => CharacterController.ActiveCharacter != null);
+        // Đợi tới khi player đã khởi tạo
+        yield return new WaitUntil(() => PlayerHealthController.instance != null);
+
+        Transform playerTransform = PlayerHealthController.instance.transform;
 
         foreach (EnemyController enemy in FindObjectsOfType<EnemyController>())
         {
-            enemy.SetTarget(CharacterController.ActiveCharacter.transform);
+            enemy.SetTarget(playerTransform);
         }
     }
 

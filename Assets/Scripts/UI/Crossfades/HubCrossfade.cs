@@ -48,23 +48,24 @@ public class HubCrossfade : MonoBehaviour
     // Bắt đầu hiệu ứng crossfade và tải màn tiếp theo sau một khoảng thời gian
     public void NextLevelCrossfade()
     {
-        // Bắt đầu Coroutine để tải màn tiếp theo với hiệu ứng crossfade
-        StartCoroutine(loadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        // Chọn scene ngẫu nhiên từ danh sách
+        string[] levelNames = { "Level One", "Level Two" }; // <-- thêm tên các scene bạn muốn
+        string randomLevel = levelNames[Random.Range(0, levelNames.Length)];
 
-        // Bắt đầu Coroutine để làm mờ nhạc nền
+        StartCoroutine(loadLevel(randomLevel));
         StartCoroutine(FadeOutMusic());
     }
 
+
     // Coroutine to load a level with a crossfade animation.
     // Coroutine để tải màn chơi tiếp theo với hiệu ứng crossfade
-    IEnumerator loadLevel(int levelIndex)
+    IEnumerator loadLevel(string levelName)
     {
         crossfadeAnimator.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
 
-       
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadScene(levelName);
     }
 
 

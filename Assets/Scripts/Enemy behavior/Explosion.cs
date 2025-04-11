@@ -7,7 +7,11 @@ public class Explosion : MonoBehaviour
 
     void OnDestroy()
     {
-        // Tạo hiệu ứng nổ tại vị trí của đối tượng khi nó bị hủy.
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        // Nếu game vẫn đang chạy thì mới tạo hiệu ứng nổ
+        if (GameController.instance != null && GameController.instance.gameActive)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+        }
     }
+
 }

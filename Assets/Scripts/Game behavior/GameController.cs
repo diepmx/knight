@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     public float endTimer = 600f;
 
     // Tham chiếu đến người chơi
-    private CharacterController player;
+    private CharacterSwapPoint player;
     // Bộ đếm thời gian trong game
     private float timer;
     // Thời gian chơi tốt nhất được ghi nhận
@@ -57,7 +57,7 @@ public class GameController : MonoBehaviour
         if (PlayerHealthController.instance != null)
         {
             GameObject playerObject = PlayerHealthController.instance.gameObject;
-            player = playerObject.GetComponent<CharacterController>();
+            player = playerObject.GetComponent<CharacterSwapPoint>();
         }
         else
         {
@@ -122,13 +122,20 @@ public class GameController : MonoBehaviour
     {
         if (!bossSpawned)
         {
-            // Rung màn hình khi Boss xuất hiện
             CameraShake.instance.ShakeIt(0.5f, 0.2f);
 
-            // Xuất hiện Boss gần người chơi (cách -30 đơn vị trên trục X)
-            Instantiate(boss, new Vector3(player.transform.position.x + (-30), player.transform.position.y, 0), Quaternion.identity);
+            CharacterSwapPoint playerSwap = PlayerHealthController.instance.GetComponent<CharacterSwapPoint>();
 
-            bossSpawned = true;
+            if (playerSwap != null)
+            {
+                Vector3 spawnPos = playerSwap.transform.position + new Vector3(-30f, 0f, 0f);
+                Instantiate(boss, spawnPos, Quaternion.identity);
+                bossSpawned = true;
+            }
+            else
+            {
+                Debug.LogWarning("Không tìm thấy CharacterSwapPoint trên Player khi gọi BossSpawn");
+            }
         }
     }
 
