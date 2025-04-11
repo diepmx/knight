@@ -2,6 +2,14 @@
 
 public class CharacterSwapPoint : MonoBehaviour
 {
+    public static CharacterSwapPoint instance;
+    private void Awake()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            instance = this;
+        }
+    }
     [Header("Nhân vật sẽ điều khiển nếu đổi")]
     public GameObject targetCharacterInScene;
 

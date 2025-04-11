@@ -21929,7 +21929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCharacterInScene: {fileID: 542557848}
   characterName: Druid
-  anchorPoint: {fileID: 1726367209}
+  anchorPoint: {fileID: 0}
 --- !u!114 &542557852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37554,7 +37554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCharacterInScene: {fileID: 1271338733}
   characterName: DemonKin
-  anchorPoint: {fileID: 1726367209}
+  anchorPoint: {fileID: 0}
 --- !u!114 &1271338736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42423,7 +42423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCharacterInScene: {fileID: 1530824233}
   characterName: Elf
-  anchorPoint: {fileID: 1726367209}
+  anchorPoint: {fileID: 0}
 --- !u!114 &1530824236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51032,7 +51032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCharacterInScene: {fileID: 1718575090}
   characterName: Eleonore
-  anchorPoint: {fileID: 1726367209}
+  anchorPoint: {fileID: 0}
 --- !u!114 &1718575093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56012,37 +56012,6 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!1 &1726367208
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1726367209}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1726367209
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726367208}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3655345, y: -1.0706717, z: 3.0447857}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1726468056
 GameObject:
   m_ObjectHideFlags: 0
@@ -56736,7 +56705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCharacterInScene: {fileID: 1776655785}
   characterName: ArchDemon
-  anchorPoint: {fileID: 1726367209}
+  anchorPoint: {fileID: 0}
 --- !u!114 &1776655788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58870,7 +58839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCharacterInScene: {fileID: 1901518342}
   characterName: Player
-  anchorPoint: {fileID: 1726367209}
+  anchorPoint: {fileID: 0}
 --- !u!114 &1901518345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67569,7 +67538,6 @@ SceneRoots:
   - {fileID: 1402126066}
   - {fileID: 1671819729}
   - {fileID: 761511057}
-  - {fileID: 1726367209}
   - {fileID: 1895586778}
   - {fileID: 327586380}
   - {fileID: 22200569}

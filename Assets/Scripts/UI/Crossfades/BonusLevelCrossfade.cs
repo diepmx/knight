@@ -105,10 +105,10 @@ public class BonusLevelCrossfade : MonoBehaviour
         float fadeOutStartTime = Time.time; // Thời điểm bắt đầu hiệu ứng mờ dần
 
         // Thu nhỏ nhân vật và mờ dần cho đến khi đạt kích thước đích và độ mờ dần là 0
-        while (CharacterController.instance.transform.localScale.x > targetScale.x || playerSpriteRenderer.color.a > 0)
+        while (CharacterSwapPoint.instance.transform.localScale.x > targetScale.x || playerSpriteRenderer.color.a > 0)
         {
             // Thu nhỏ nhân vật
-            CharacterController.instance.transform.localScale -= new Vector3(scaleSpeed, scaleSpeed, 0f) * Time.deltaTime;
+            CharacterSwapPoint.instance.transform.localScale -= new Vector3(scaleSpeed, scaleSpeed, 0f) * Time.deltaTime;
 
             // Tính toán độ trong suốt mới để mờ dần
             float newAlpha = Mathf.Lerp(initialAlpha, 0f, Mathf.Clamp01((Time.time - fadeOutStartTime) / fadeOutDuration));
@@ -118,7 +118,7 @@ public class BonusLevelCrossfade : MonoBehaviour
         }
 
         // Đảm bảo nhân vật đạt kích thước và độ mờ dần cuối cùng
-        CharacterController.instance.transform.localScale = targetScale;
+        CharacterSwapPoint.instance.transform.localScale = targetScale;
         playerSpriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
     }
 }

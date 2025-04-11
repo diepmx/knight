@@ -49,7 +49,7 @@ public class HubCrossfade : MonoBehaviour
     public void NextLevelCrossfade()
     {
         // Chọn scene ngẫu nhiên từ danh sách
-        string[] levelNames = { "Level One", "Level Two" }; // <-- thêm tên các scene bạn muốn
+        string[] levelNames = { "Level One", "Level Two", "Level Three" }; // <-- thêm tên các scene bạn muốn
         string randomLevel = levelNames[Random.Range(0, levelNames.Length)];
 
         StartCoroutine(loadLevel(randomLevel));
