@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 782164168663166983}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -0.51, z: 0}
+  m_LocalPosition: {x: -0.11, y: -0.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4939,7 +4939,7 @@ Transform:
   m_GameObject: {fileID: 3289774155186047755}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5174,7 +5174,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.021825165, y: 0.45009696}
+  m_Offset: {x: -0.021824896, y: -0.02692151}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5185,7 +5185,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.89919716, y: 1.8045397}
+  m_Size: {x: 0.27386236, y: 0.88257074}
   m_EdgeRadius: 0
 --- !u!50 &6337011590260223039
 Rigidbody2D:
@@ -5271,7 +5271,7 @@ MonoBehaviour:
   - {x: 0, y: -0.23, z: 0}
   m_ShapePathHash: -708389769
   m_Mesh: {fileID: 0}
-  m_InstanceId: 60514
+  m_InstanceId: 88124
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.275, y: 0.42499924, z: 0}
@@ -5287,23 +5287,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1506083868faae64cb8dfba60699d124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDistance: 0
+  isChestClosed: 1
+  isChestSpawned: 0
+  pickupRange: 1.5
+  pickupRangeMultiplier: 1.1
+  speed: 3
+  speedMultiplier: 1.1
   animator: {fileID: 387229782383615246}
   spriteRenderer: {fileID: 2512872772953222010}
   footParticles:
   - {fileID: 8311204569839436224}
   - {fileID: 6667657857737826336}
-  speed: 3
-  speedMultiplier: 1.1
-  pickupRange: 1.5
-  pickupRangeMultiplier: 1.1
-  playerDistance: 0
   maxWeapons: 3
   unassignedWeapons: []
   assignedWeapons: []
   listWeapons: []
   fullyLevelledWeapons: []
-  isChestClosed: 1
-  isChestSpawned: 0
   dialogueTriggers: []
 --- !u!212 &7372930472341737228
 SpriteRenderer:
@@ -5384,7 +5384,7 @@ Transform:
   m_GameObject: {fileID: 9212551406935328058}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: -0.538, z: 0}
+  m_LocalPosition: {x: 0.11, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

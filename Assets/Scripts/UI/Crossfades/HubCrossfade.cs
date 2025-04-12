@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.ParticleSystem;
 
 public class HubCrossfade : MonoBehaviour
 {
+    [Header("Particle System sẽ bị huỷ khi chuyển màn")]
+    public ParticleSystem[] particlesToStop; // Gán 2 cái ParticleSystem bạn muốn tắt
+    public float preFadeDelay = 0.3f; // Thời gian delay trước khi bắt đầu crossfade
+
+
     [Space(10)]
     // Animator for the crossfade transition
     // Animator để thực hiện hiệu ứng crossfade chuyển cảnh
@@ -61,12 +67,26 @@ public class HubCrossfade : MonoBehaviour
     // Coroutine để tải màn chơi tiếp theo với hiệu ứng crossfade
     IEnumerator loadLevel(string levelName)
     {
+        // 👉 Ngừng tất cả particle trước khi crossfade
+        foreach (var ps in particlesToStop)
+        {
+            if (ps != null)
+            {
+                ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            }
+        }
+
+        // 👉 Chờ chút rồi mới bắt đầu crossfade (cho cảm giác “tắt rồi fade”)
+        yield return new WaitForSeconds(preFadeDelay);
+
         crossfadeAnimator.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(levelName);
     }
+
+
 
 
     // Coroutine to fade out the background music.

@@ -31,7 +31,7 @@ public class BonusLevelCrossfade : MonoBehaviour
     // Kiểm tra khi nào nhân vật va chạm với trigger
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Stairs"))
+        if (other.CompareTag("Altar"))
         {
             // Khi nhân vật va chạm với cầu thang, bắt đầu quá trình chuyển cảnh
             StartCoroutine(NextLevelSequence());

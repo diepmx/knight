@@ -44,14 +44,27 @@ public class PlayerController : CharacterController
 
     public void OnOpenDialogue()
     {
-        foreach (DialogueTrigger trigger in dialogueTriggers)
+        if (dialogueTriggers == null) return;
+
+        // Dùng vòng for ngược để có thể xóa phần tử null trong danh sách
+        for (int i = dialogueTriggers.Count - 1; i >= 0; i--)
         {
+            DialogueTrigger trigger = dialogueTriggers[i];
+
+            // Nếu null thì xóa ra khỏi danh sách
+            if (trigger == null)
+            {
+                dialogueTriggers.RemoveAt(i);
+                continue;
+            }
+
             if (trigger.isInRange && !DialogueManager.instance.isDialogueOpen)
             {
                 trigger.TriggerDialogue();
             }
         }
     }
+
 
     public void OnNextSentence()
     {

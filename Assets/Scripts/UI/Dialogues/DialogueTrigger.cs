@@ -12,20 +12,38 @@ public class DialogueTrigger : MonoBehaviour
     // Gọi khi collider khác đi vào vùng trigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Kiểm tra nếu collider là người chơi
         if (collision.CompareTag("Player"))
         {
-            isInRange = true; // Đặt isInRange thành true khi người chơi vào khu vực
+            isInRange = true;
+
+            // ✅ Luôn hiện hint khi lại gần, bất kể hộp thoại đang mở hay không
+            HintUI.instance.ShowHint("Nhấn [E] để trò chuyện");
         }
     }
 
-    // Gọi khi collider khác rời khỏi vùng trigger
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // Kiểm tra nếu collider là người chơi
         if (collision.CompareTag("Player"))
         {
-            isInRange = false; // Đặt isInRange thành false khi người chơi rời khỏi khu vực
+            isInRange = false;
+            HintUI.instance.HideHint();
+        }
+    }
+
+    private void Update()
+    {
+        if (isInRange && Input.GetKeyDown(KeyCode.E))
+        {
+            TriggerDialogue();
+
+            // ✅ Đổi hint khi bắt đầu thoại
+            HintUI.instance.ShowHint("Nhấn [Space] để tiếp tục");
+        }
+
+        // ✅ Nếu thoại kết thúc và vẫn còn trong vùng, hiện lại hint E
+        if (isInRange && !DialogueManager.instance.isDialogueOpen)
+        {
+            HintUI.instance.ShowHint("Nhấn [E] để trò chuyện");
         }
     }
 
@@ -34,4 +52,6 @@ public class DialogueTrigger : MonoBehaviour
     {
         DialogueManager.instance.StartDialogue(dialogue); // Gọi phương thức StartDialogue để bắt đầu hội thoại
     }
+    
+
 }

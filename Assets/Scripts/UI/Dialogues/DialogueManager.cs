@@ -113,6 +113,20 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         isDialogueOpen = false;
-        animator.SetBool("isOpen", false); // Bật animation đóng hộp thoại
+        animator.SetBool("isOpen", false);
+
+        // 👉 Ẩn hint nếu không còn trong vùng trò chuyện
+        if (!FindObjectOfType<DialogueTrigger>().isInRange)
+        {
+            HintUI.instance.HideHint();
+        }
     }
+    void Update()
+    {
+        if (isDialogueOpen && Input.GetKeyDown(KeyCode.Space))
+        {
+            DisplayNextSentence();
+        }
+    }
+
 }

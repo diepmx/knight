@@ -10,6 +10,7 @@ TagManager:
   - PlayerUpdate
   - Stairs
   - PlayerInScene
+  - Altar
   layers:
   - Default
   - TransparentFX
