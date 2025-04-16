@@ -127,16 +127,38 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: bd0458d631277e7300000000738b88f725d47a1e3d063f32b5b8abef432f63c48538c7398139b6d865b6b741e1f81ce79ba7e83a
   m_ShapePath:
-  - {x: -0.44216287, y: -0.61430395, z: 0}
-  - {x: -0.18288636, y: 0.3236, z: 0}
-  - {x: 0.45001966, y: 0.3157433, z: 0}
-  - {x: 0.45001966, y: -0.66144514, z: 0}
-  m_ShapePathHash: 605786189
+  - {x: 0.062492132, y: -0.88230926, z: 0}
+  - {x: 0.0200814, y: -0.7034602, z: 0}
+  - {x: -0.0707313, y: -0.63741475, z: 0}
+  - {x: -0.029452808, y: -0.21637404, z: 0}
+  - {x: 0.11089411, y: -0.0017257929, z: 0}
+  - {x: 0.10263841, y: 0.2129224, z: 0}
+  - {x: -0.009516656, y: 0.2740658, z: 0}
+  - {x: 0.03659281, y: 0.5596618, z: 0}
+  - {x: -0.1697997, y: 0.6504746, z: 0}
+  - {x: -0.16154352, y: 0.8403557, z: 0}
+  - {x: 0.0778713, y: 0.86512274, z: 0}
+  - {x: 0.30077523, y: 0.92291266, z: 0}
+  - {x: 0.5977943, y: 0.8277482, z: 0}
+  - {x: 0.2624136, y: 0.20405069, z: 0}
+  - {x: 0.27094537, y: 0.029149227, z: 0}
+  - {x: 0.55676025, y: 0.020617448, z: 0}
+  - {x: 0.595153, y: -0.1286887, z: 0}
+  - {x: 0.595153, y: -0.48702356, z: 0}
+  - {x: 0.58662117, y: -0.63632965, z: 0}
+  - {x: 0.5482282, y: -0.70458376, z: 0}
+  - {x: 0.45001966, y: -0.7254334, z: 0}
+  - {x: 0.43304917, y: -0.8282947, z: 0}
+  - {x: 0.33493373, y: -0.8325604, z: 0}
+  - {x: 0.2965407, y: -0.7813698, z: 0}
+  - {x: 0.19842526, y: -0.78990155, z: 0}
+  - {x: 0.18989348, y: -0.87521935, z: 0}
+  m_ShapePathHash: 1548309354
   m_Mesh: {fileID: 0}
-  m_InstanceId: -198314
+  m_InstanceId: 61236
   m_LocalBounds:
-    m_Center: {x: 0.003928393, y: -0.16892257, z: 0}
-    m_Extent: {x: 0.44609126, y: 0.49252257, z: 0}
+    m_Center: {x: 0.21399729, y: 0.0203017, z: 0}
+    m_Extent: {x: 0.383797, y: 0.90261096, z: 0}
 --- !u!1 &6151769877626338284
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +185,7 @@ Transform:
   m_GameObject: {fileID: 6151769877626338284}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -0.08, z: 0}
+  m_LocalPosition: {x: 0.27, y: -0.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -185,7 +207,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.75
-  m_Color: {r: 0.6117647, g: 0.7411765, b: 0.28627452, a: 1}
+  m_Color: {r: 0.7490196, g: 0.61960787, b: 0.44705886, a: 1}
   m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -288,7 +310,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.20969692, y: -0.15760833}
+  m_Offset: {x: 0.27324605, y: -0.41741216}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -299,7 +321,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9685082, y: 0.9287833}
+  m_Size: {x: 0.55730796, y: 0.5661793}
   m_EdgeRadius: 0
 --- !u!50 &2511990038230672631
 Rigidbody2D:
@@ -342,13 +364,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2d: {fileID: 2511990038230672631}
   spriteRenderer: {fileID: 4672894786930657158}
-  health: 2000
-  moveSpeed: 3.5
-  damage: 75
+  health: 2
+  moveSpeed: 1
+  damage: 5
   hitWaitTime: 0.5
   knockBackTime: 0.5
-  experienceToGive: 2000
-  coinDropRate: 1
+  experienceToGive: 5
+  coinDropRate: 0.5
 --- !u!114 &8372244556738304765
 MonoBehaviour:
   m_ObjectHideFlags: 0

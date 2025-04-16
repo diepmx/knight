@@ -68,7 +68,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1271041, y: -0.63591427}
+  m_Offset: {x: -0.10036269, y: -0.6417276}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -79,7 +79,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9614483, y: 0.6427804}
+  m_Size: {x: 0.8661093, y: 0.5706948}
   m_EdgeRadius: 0
 --- !u!50 &8053689058647794849
 Rigidbody2D:
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2d: {fileID: 8053689058647794849}
   spriteRenderer: {fileID: 7816144065435420582}
-  health: 2
+  health: 4
   moveSpeed: 1
   damage: 5
   hitWaitTime: 0.5
@@ -256,16 +256,18 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: bd0458d631277e7300000000738b88f725d47a1e3d063f32b5b8abef432f63c48538c7398139b6d865b6b741e1f81ce79ba7e83a
   m_ShapePath:
-  - {x: -0.19, y: -0.31, z: 0}
-  - {x: -0.19, y: 0.13, z: 0}
-  - {x: 0.25, y: 0.13, z: 0}
-  - {x: 0.25, y: -0.31, z: 0}
-  m_ShapePathHash: -593265251
+  - {x: -0.81947416, y: -0.9311551, z: 0}
+  - {x: -0.5615839, y: -0.39687258, z: 0}
+  - {x: 0.13630629, y: -0.1473014, z: 0}
+  - {x: 0.38785708, y: -0.24528477, z: 0}
+  - {x: 0.5265078, y: -0.6168687, z: 0}
+  - {x: 0.30268723, y: -0.93115515, z: 0}
+  m_ShapePathHash: -2092170599
   m_Mesh: {fileID: 0}
-  m_InstanceId: 40948
+  m_InstanceId: 48638
   m_LocalBounds:
-    m_Center: {x: 0.030000001, y: -0.09, z: 0}
-    m_Extent: {x: 0.22, y: 0.22, z: 0}
+    m_Center: {x: -0.14648318, y: -0.53922826, z: 0}
+    m_Extent: {x: 0.672991, y: 0.39192688, z: 0}
 --- !u!1 &5472509631198789658
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +294,7 @@ Transform:
   m_GameObject: {fileID: 5472509631198789658}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -0.08, z: 0}
+  m_LocalPosition: {x: -0.069, y: -0.638, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

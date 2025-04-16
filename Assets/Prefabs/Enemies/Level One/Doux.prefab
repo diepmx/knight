@@ -68,7 +68,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.031568125, y: -0.032470703}
+  m_Offset: {x: 0.35695997, y: 0.057522446}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -79,7 +79,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.60687864, y: 1.0977752}
+  m_Size: {x: 0.743599, y: 0.41936558}
   m_EdgeRadius: 0
 --- !u!50 &7334177922606779263
 Rigidbody2D:
@@ -122,12 +122,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2d: {fileID: 7334177922606779263}
   spriteRenderer: {fileID: 8454726231844176878}
-  health: 20
+  health: 200
   moveSpeed: 0.5
   damage: 20
   hitWaitTime: 0.5
   knockBackTime: 0.5
-  experienceToGive: 10
+  experienceToGive: 200
   coinDropRate: 0.5
 --- !u!1 &6150287044521656418
 GameObject:
@@ -256,16 +256,31 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: bd0458d631277e7300000000738b88f725d47a1e3d063f32b5b8abef432f63c48538c7398139b6d865b6b741e1f81ce79ba7e83a
   m_ShapePath:
-  - {x: -0.36237872, y: -0.4367686, z: 0}
-  - {x: -0.24335487, y: 0.24707437, z: 0}
-  - {x: 0.25079393, y: 0.23963535, z: 0}
-  - {x: 0.3698177, y: -0.4367686, z: 0}
-  m_ShapePathHash: 270697627
+  - {x: -0.22565836, y: -0.52330047, z: 0}
+  - {x: -0.22632238, y: -0.31154925, z: 0}
+  - {x: -0.3353525, y: -0.25270754, z: 0}
+  - {x: -0.3353525, y: -0.16098374, z: 0}
+  - {x: -0.15882762, y: -0.16098374, z: 0}
+  - {x: -0.032491073, y: -0.04676175, z: 0}
+  - {x: -0.19690157, y: -0.019071579, z: 0}
+  - {x: -0.1447086, y: 0.26265013, z: 0}
+  - {x: 0.22710441, y: 0.26129162, z: 0}
+  - {x: 0.26636976, y: 0.26386428, z: 0}
+  - {x: 0.3915149, y: 0.26475298, z: 0}
+  - {x: 0.69264567, y: 0.25783026, z: 0}
+  - {x: 0.6995683, y: -0.14367741, z: 0}
+  - {x: 0.34651834, y: -0.16098374, z: 0}
+  - {x: 0.13791235, y: -0.5354149, z: 0}
+  - {x: 0.05057944, y: -0.51230305, z: 0}
+  - {x: 0.029811798, y: -0.41019553, z: 0}
+  - {x: -0.034221765, y: -0.40846485, z: 0}
+  - {x: -0.16228883, y: -0.52268696, z: 0}
+  m_ShapePathHash: 1699083033
   m_Mesh: {fileID: 0}
-  m_InstanceId: 45082
+  m_InstanceId: 48806
   m_LocalBounds:
-    m_Center: {x: 0.0037195086, y: -0.09484711, z: 0}
-    m_Extent: {x: 0.36609823, y: 0.34192148, z: 0}
+    m_Center: {x: 0.1821079, y: -0.13533095, z: 0}
+    m_Extent: {x: 0.5174604, y: 0.40008393, z: 0}
 --- !u!1 &6708296267790565143
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +307,7 @@ Transform:
   m_GameObject: {fileID: 6708296267790565143}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.15, z: 0}
+  m_LocalPosition: {x: 0.112, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

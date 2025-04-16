@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 281364404933179324}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -0.08, z: 0}
+  m_LocalPosition: {x: -0.018, y: -0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.75
-  m_Color: {r: 0.6117647, g: 0.7411765, b: 0.28627452, a: 1}
+  m_Color: {r: 0.5568628, g: 0.627451, b: 0.5686275, a: 1}
   m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -151,7 +151,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.20969692, y: -0.15760833}
+  m_Offset: {x: -0.004280053, y: -0.3091753}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -162,7 +162,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9685082, y: 0.9287833}
+  m_Size: {x: 0.46922803, y: 1.2319176}
   m_EdgeRadius: 0
 --- !u!50 &8140746374273530779
 Rigidbody2D:
@@ -205,13 +205,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2d: {fileID: 8140746374273530779}
   spriteRenderer: {fileID: 3001275589834057803}
-  health: 2000
-  moveSpeed: 3.5
-  damage: 75
+  health: 2
+  moveSpeed: 1
+  damage: 5
   hitWaitTime: 0.5
   knockBackTime: 0.5
-  experienceToGive: 2000
-  coinDropRate: 1
+  experienceToGive: 5
+  coinDropRate: 0.5
 --- !u!114 &1344642912489849847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,13 +352,30 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: bd0458d631277e7300000000738b88f725d47a1e3d063f32b5b8abef432f63c48538c7398139b6d865b6b741e1f81ce79ba7e83a
   m_ShapePath:
-  - {x: -0.44216287, y: -0.61430395, z: 0}
-  - {x: -0.18288636, y: 0.3236, z: 0}
-  - {x: 0.45001966, y: 0.3157433, z: 0}
-  - {x: 0.45001966, y: -0.66144514, z: 0}
-  m_ShapePathHash: 605786189
+  - {x: -0.23264387, y: -1.042258, z: 0}
+  - {x: -0.30841947, y: -0.56978655, z: 0}
+  - {x: -0.45998663, y: -0.48954535, z: 0}
+  - {x: -0.5625173, y: -0.3201467, z: 0}
+  - {x: -0.53131235, y: -0.03484407, z: 0}
+  - {x: -0.3752874, y: 0.18804875, z: 0}
+  - {x: -0.24083847, y: 0.4082992, z: 0}
+  - {x: -0.112274155, y: 0.4510622, z: 0}
+  - {x: -0.09444274, y: 0.7051599, z: 0}
+  - {x: 0.01700361, y: 0.6828706, z: 0}
+  - {x: 0.0571243, y: 0.45997787, z: 0}
+  - {x: 0.21314919, y: 0.43323076, z: 0}
+  - {x: 0.3385733, y: 0.21321267, z: 0}
+  - {x: 0.41375288, y: 0.16575944, z: 0}
+  - {x: 0.39146367, y: -0.11508539, z: 0}
+  - {x: 0.22266883, y: -0.32264823, z: 0}
+  - {x: 0.21314919, y: -0.99328274, z: 0}
+  - {x: 0.11061856, y: -0.97990936, z: 0}
+  - {x: 0.083871424, y: -0.94424653, z: 0}
+  - {x: -0.09890059, y: -0.94870424, z: 0}
+  - {x: -0.11673201, y: -1.0289457, z: 0}
+  m_ShapePathHash: -833652351
   m_Mesh: {fileID: 0}
-  m_InstanceId: -140630
+  m_InstanceId: 60442
   m_LocalBounds:
-    m_Center: {x: 0.003928393, y: -0.16892257, z: 0}
-    m_Extent: {x: 0.44609126, y: 0.49252257, z: 0}
+    m_Center: {x: -0.074382186, y: -0.16854906, z: 0}
+    m_Extent: {x: 0.4881351, y: 0.87370896, z: 0}

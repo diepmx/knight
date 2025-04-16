@@ -127,16 +127,29 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: bd0458d631277e7300000000738b88f725d47a1e3d063f32b5b8abef432f63c48538c7398139b6d865b6b741e1f81ce79ba7e83a
   m_ShapePath:
-  - {x: -0.057380185, y: -0.26567188, z: 0}
-  - {x: -0.2359159, y: 0.36981773, z: 0}
-  - {x: 0.2359159, y: 0.3698177, z: 0}
-  - {x: 0.057380185, y: -0.25823292, z: 0}
-  m_ShapePathHash: 1551085657
+  - {x: -0.23470937, y: 0.5551909, z: 0}
+  - {x: -0.47892445, y: 0.7343682, z: 0}
+  - {x: -0.6762748, y: 0.5398781, z: 0}
+  - {x: -0.82268906, y: 0.6020821, z: 0}
+  - {x: -0.5417974, y: 0.9326606, z: 0}
+  - {x: -0.12372162, y: 0.7077309, z: 0}
+  - {x: 0.10633668, y: 0.6876532, z: 0}
+  - {x: 0.47036964, y: 1.0416265, z: 0}
+  - {x: 0.8832931, y: 0.7403039, z: 0}
+  - {x: 0.8526028, y: 0.5812726, z: 0}
+  - {x: 0.754952, y: 0.56453246, z: 0}
+  - {x: 0.4843198, y: 0.83237463, z: 0}
+  - {x: 0.3113385, y: 0.6538131, z: 0}
+  - {x: 0.28622812, y: 0.2911101, z: 0}
+  - {x: 0.18578747, y: 0.17671925, z: 0}
+  - {x: -0.1266952, y: 0.16555914, z: 0}
+  - {x: -0.21046193, y: 0.2718716, z: 0}
+  m_ShapePathHash: -1672141873
   m_Mesh: {fileID: 0}
-  m_InstanceId: -87362
+  m_InstanceId: 50850
   m_LocalBounds:
-    m_Center: {x: 0, y: 0.052072912, z: 0}
-    m_Extent: {x: 0.2359159, y: 0.3177448, z: 0}
+    m_Center: {x: 0.030302048, y: 0.60359275, z: 0}
+    m_Extent: {x: 0.8529911, y: 0.43803364, z: 0}
 --- !u!1 &1945914914165996577
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +176,7 @@ Transform:
   m_GameObject: {fileID: 1945914914165996577}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -0.08, z: 0}
+  m_LocalPosition: {x: 0.08, y: 0.352, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -185,7 +198,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.75
-  m_Color: {r: 0.6117647, g: 0.68235296, b: 0.70980394, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -287,7 +300,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.005, y: 0.03}
+  m_Offset: {x: 0.03285177, y: 0.44574946}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -298,7 +311,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.7}
+  m_Size: {x: 0.44429645, y: 0.4002869}
   m_EdgeRadius: 0
 --- !u!50 &1723158098754093839
 Rigidbody2D:
@@ -341,10 +354,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2d: {fileID: 1723158098754093839}
   spriteRenderer: {fileID: 8686594946513357070}
-  health: 10
-  moveSpeed: 4
-  damage: 15
+  health: 2
+  moveSpeed: 1
+  damage: 5
   hitWaitTime: 0.5
   knockBackTime: 0.5
-  experienceToGive: 20
+  experienceToGive: 2
   coinDropRate: 0.5

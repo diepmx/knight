@@ -127,16 +127,28 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: bd0458d631277e7300000000738b88f725d47a1e3d063f32b5b8abef432f63c48538c7398139b6d865b6b741e1f81ce79ba7e83a
   m_ShapePath:
-  - {x: -0.057380185, y: -0.26567188, z: 0}
-  - {x: -0.2359159, y: 0.36981773, z: 0}
-  - {x: 0.2359159, y: 0.3698177, z: 0}
-  - {x: 0.057380185, y: -0.25823292, z: 0}
-  m_ShapePathHash: 1551085657
+  - {x: -0.28365117, y: -0.8879168, z: 0}
+  - {x: -0.29576105, y: -0.56452656, z: 0}
+  - {x: -0.7765868, y: -0.54684913, z: 0}
+  - {x: -0.6139543, y: -0.27461696, z: 0}
+  - {x: -0.53263843, y: 0.0152926445, z: 0}
+  - {x: -0.68112874, y: 0.08600229, z: 0}
+  - {x: -0.41950297, y: 0.5067248, z: 0}
+  - {x: -0.47986406, y: 0.8647854, z: 0}
+  - {x: 0.07900047, y: 0.91684073, z: 0}
+  - {x: 0.29112947, y: 0.6764279, z: 0}
+  - {x: 0.31723225, y: 0.10465649, z: 0}
+  - {x: 0.4042648, y: 0.004686117, z: 0}
+  - {x: 0.78256166, y: -0.016526848, z: 0}
+  - {x: 0.7330649, y: -0.15087515, z: 0}
+  - {x: 0.015361607, y: -0.10844931, z: 0}
+  - {x: -0.07696845, y: -0.89108455, z: 0}
+  m_ShapePathHash: -242877055
   m_Mesh: {fileID: 0}
-  m_InstanceId: -106546
+  m_InstanceId: 56066
   m_LocalBounds:
-    m_Center: {x: 0, y: 0.052072912, z: 0}
-    m_Extent: {x: 0.2359159, y: 0.3177448, z: 0}
+    m_Center: {x: 0.0029874444, y: 0.01287806, z: 0}
+    m_Extent: {x: 0.7795742, y: 0.9039626, z: 0}
 --- !u!1 &5294816336799278249
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +217,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.005, y: 0.03}
+  m_Offset: {x: -0.23364523, y: -0.1635957}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -216,7 +228,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.7}
+  m_Size: {x: 0.46818036, y: 1.4690235}
   m_EdgeRadius: 0
 --- !u!50 &8527079931528808436
 Rigidbody2D:
@@ -259,13 +271,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2d: {fileID: 8527079931528808436}
   spriteRenderer: {fileID: 2136592979887584429}
-  health: 10
+  health: 100
   moveSpeed: 4
-  damage: 15
+  damage: 50
   hitWaitTime: 0.5
   knockBackTime: 0.5
-  experienceToGive: 20
-  coinDropRate: 0.5
+  experienceToGive: 500
+  coinDropRate: 1
 --- !u!1 &5323727215501064926
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +304,7 @@ Transform:
   m_GameObject: {fileID: 5323727215501064926}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -0.08, z: 0}
+  m_LocalPosition: {x: -0.207, y: 0.156, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -314,7 +326,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.75
-  m_Color: {r: 0.6117647, g: 0.68235296, b: 0.70980394, a: 1}
+  m_Color: {r: 0.6313726, g: 0.039215688, b: 0.121568635, a: 1}
   m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0

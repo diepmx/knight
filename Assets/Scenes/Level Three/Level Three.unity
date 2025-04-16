@@ -22735,8 +22735,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -698874691
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -53707,7 +53707,7 @@ MonoBehaviour:
   enemySpawner: {fileID: 2100367533}
   deathEffect: {fileID: 965518837548101591, guid: d9fbd02aea997d542a4ab20c4efdbde9, type: 3}
   boss: {fileID: 6376221124656991259, guid: 696442a81bf5496498203521de5a326d, type: 3}
-  endTimer: 30
+  endTimer: 300
   bestTimer: 0
   gameActive: 0
   endGame: 1

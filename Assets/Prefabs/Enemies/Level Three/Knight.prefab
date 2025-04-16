@@ -127,16 +127,43 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: bd0458d631277e7300000000738b88f725d47a1e3d063f32b5b8abef432f63c48538c7398139b6d865b6b741e1f81ce79ba7e83a
   m_ShapePath:
-  - {x: -0.057380185, y: -0.26567188, z: 0}
-  - {x: -0.2359159, y: 0.36981773, z: 0}
-  - {x: 0.2359159, y: 0.3698177, z: 0}
-  - {x: 0.057380185, y: -0.25823292, z: 0}
-  m_ShapePathHash: 1551085657
+  - {x: -0.36417168, y: -0.9385215, z: 0}
+  - {x: -0.3766315, y: -0.85378563, z: 0}
+  - {x: -0.5683763, y: -0.7980052, z: 0}
+  - {x: -0.5823214, y: -0.32735905, z: 0}
+  - {x: -0.41846693, y: -0.22625738, z: 0}
+  - {x: -0.41498065, y: 0.32805935, z: 0}
+  - {x: -0.2986687, y: 0.5057821, z: 0}
+  - {x: -0.034977496, y: 0.54420793, z: 0}
+  - {x: 0.087041855, y: 0.47099632, z: 0}
+  - {x: 0.17316285, y: 0.32798252, z: 0}
+  - {x: 0.18637188, y: -0.11878219, z: 0}
+  - {x: 0.24741012, y: -0.1913947, z: 0}
+  - {x: 0.41823727, y: -0.20185341, z: 0}
+  - {x: 0.4356686, y: 0.2827378, z: 0}
+  - {x: 0.38337463, y: 0.8335682, z: 0}
+  - {x: 0.53562146, y: 0.94001496, z: 0}
+  - {x: 0.81411016, y: 0.92410123, z: 0}
+  - {x: 0.7942182, y: 0.737116, z: 0}
+  - {x: 0.67486584, y: 0.6257205, z: 0}
+  - {x: 0.6151897, y: 0.37905908, z: 0}
+  - {x: 0.58336234, y: 0.27164197, z: 0}
+  - {x: 0.5714274, y: -0.94973004, z: 0}
+  - {x: 0.4401396, y: -0.92983806, z: 0}
+  - {x: 0.40831256, y: -0.47232088, z: 0}
+  - {x: 0.2571327, y: -0.47629917, z: 0}
+  - {x: 0.23326254, y: -0.76672316, z: 0}
+  - {x: 0.10595316, y: -0.8980108, z: 0}
+  - {x: -0.041248053, y: -0.8980108, z: 0}
+  - {x: -0.077053756, y: -0.84629136, z: 0}
+  - {x: -0.18049242, y: -0.8383347, z: 0}
+  - {x: -0.19242741, y: -0.9258596, z: 0}
+  m_ShapePathHash: -2043758073
   m_Mesh: {fileID: 0}
-  m_InstanceId: -106222
+  m_InstanceId: 53790
   m_LocalBounds:
-    m_Center: {x: 0, y: 0.052072912, z: 0}
-    m_Extent: {x: 0.2359159, y: 0.3177448, z: 0}
+    m_Center: {x: 0.11589438, y: -0.00485754, z: 0}
+    m_Extent: {x: 0.6982158, y: 0.9448725, z: 0}
 --- !u!1 &4964827707964025000
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 4964827707964025000}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -0.08, z: 0}
+  m_LocalPosition: {x: -0.127, y: -0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -185,7 +212,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.75
-  m_Color: {r: 0.6117647, g: 0.68235296, b: 0.70980394, a: 1}
+  m_Color: {r: 0.64705884, g: 0.7137255, b: 0.70980394, a: 1}
   m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -287,7 +314,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.005, y: 0.03}
+  m_Offset: {x: -0.09875333, y: -0.2927879}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -298,7 +325,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.7}
+  m_Size: {x: 0.5691687, y: 1.1252601}
   m_EdgeRadius: 0
 --- !u!50 &8401723955689483828
 Rigidbody2D:
@@ -341,10 +368,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2d: {fileID: 8401723955689483828}
   spriteRenderer: {fileID: 88635669211092140}
-  health: 10
+  health: 200
   moveSpeed: 4
-  damage: 15
+  damage: 5
   hitWaitTime: 0.5
   knockBackTime: 0.5
-  experienceToGive: 20
+  experienceToGive: 200
   coinDropRate: 0.5

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Explosion : MonoBehaviour
+public class ExplosionWeapon : MonoBehaviour
 {
     // Hiệu ứng nổ sẽ kích hoạt khi đối tượng bị hủy.
     public GameObject deathEffect;

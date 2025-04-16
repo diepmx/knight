@@ -8,7 +8,7 @@ public class LevelController : MonoBehaviour
     public static LevelController instance;
 
     [Space(10)]
-    // Tham chiếu đến script ExperiencePickup (vật phẩm kinh nghiệm)
+    // Tham chiếu đến script Experi encePickup (vật phẩm kinh nghiệm)
     public ExperiencePickup pickup;
     // Tham chiếu đến script VortexCoin (rương phần thưởng)
     public VortexCoin vortex;
@@ -65,6 +65,7 @@ public class LevelController : MonoBehaviour
     // Phương thức sinh ra vật phẩm kinh nghiệm tại vị trí nhất định
     public void SpawnExp(Vector3 position, int expValue)
     {
+        Debug.Log($"[EXP SPAWN] Tạo exp tại {position} với giá trị {expValue}");
         // Tạo vật phẩm kinh nghiệm tại vị trí chỉ định với giá trị exp cụ thể
         Instantiate(pickup, position, Quaternion.identity).experienValue = expValue;
     }

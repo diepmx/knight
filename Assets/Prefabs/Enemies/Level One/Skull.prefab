@@ -69,7 +69,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0019997358, y: 0.0073367953}
+  m_Offset: {x: -0.030976966, y: 0.11841373}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -80,7 +80,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1094611, y: 0.59272075}
+  m_Size: {x: 0.36313912, y: 0.4070364}
   m_EdgeRadius: 0
 --- !u!50 &8053689058647794849
 Rigidbody2D:
@@ -123,13 +123,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2d: {fileID: 8053689058647794849}
   spriteRenderer: {fileID: 7816144065435420582}
-  health: 1000
-  moveSpeed: 2.5
-  damage: 50
+  health: 3
+  moveSpeed: 2
+  damage: 5
   hitWaitTime: 0.5
   knockBackTime: 0.5
-  experienceToGive: 1000
-  coinDropRate: 1
+  experienceToGive: 5
+  coinDropRate: 0.5
 --- !u!114 &-3834377476905281449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,16 +270,30 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: bd0458d631277e7300000000738b88f725d47a1e3d063f32b5b8abef432f63c48538c7398139b6d865b6b741e1f81ce79ba7e83a
   m_ShapePath:
-  - {x: -0.54430205, y: -0.8578667, z: 0}
-  - {x: -0.19074315, y: 0.41788244, z: 0}
-  - {x: 0.38716477, y: 0.40216863, z: 0}
-  - {x: 0.5364451, y: -0.87358046, z: 0}
-  m_ShapePathHash: 1478238239
+  - {x: -0.15810592, y: -0.21114072, z: 0}
+  - {x: -0.16026017, y: -0.09400934, z: 0}
+  - {x: -0.21348283, y: -0.08140403, z: 0}
+  - {x: -0.21628398, y: -0.026780821, z: 0}
+  - {x: -0.27972978, y: -0.009771958, z: 0}
+  - {x: -0.2797299, y: 0.26933506, z: 0}
+  - {x: -0.22924066, y: 0.28314108, z: 0}
+  - {x: -0.20594308, y: 0.343122, z: 0}
+  - {x: 0.0919711, y: 0.3508156, z: 0}
+  - {x: 0.09223703, y: 0.2855243, z: 0}
+  - {x: 0.1497762, y: 0.28232765, z: 0}
+  - {x: 0.15616944, y: 0.22319016, z: 0}
+  - {x: 0.21690533, y: 0.21519862, z: 0}
+  - {x: 0.21930075, y: -0.089807555, z: 0}
+  - {x: 0.15487334, y: -0.09681052, z: 0}
+  - {x: 0.15467805, y: -0.27686888, z: 0}
+  - {x: -0.081827015, y: -0.27468598, z: 0}
+  - {x: -0.10283592, y: -0.21726164, z: 0}
+  m_ShapePathHash: -23190194
   m_Mesh: {fileID: 0}
-  m_InstanceId: 43450
+  m_InstanceId: 43348
   m_LocalBounds:
-    m_Center: {x: -0.0039284825, y: -0.227849, z: 0}
-    m_Extent: {x: 0.54037356, y: 0.64573145, z: 0}
+    m_Center: {x: -0.030214578, y: 0.036973357, z: 0}
+    m_Extent: {x: 0.24951532, y: 0.31384224, z: 0}
 --- !u!1 &5472509631198789658
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +320,7 @@ Transform:
   m_GameObject: {fileID: 5472509631198789658}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -0.08, z: 0}
+  m_LocalPosition: {x: -0.003, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -328,7 +342,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.75
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5058824, g: 0.6627451, b: 0.6666667, a: 1}
   m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
