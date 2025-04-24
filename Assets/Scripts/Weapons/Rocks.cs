@@ -1,92 +1,99 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Rocks : Weapon
 {
     public static Rocks instance;
 
     [Space(10)]
-    // Tham chi?u ??n component Damager ?? x? l� s�t th??ng.
+    // Tham chiếu đến component Damager để xử lý sát thương.
     public EnemyDamager damager;
-    // Tham chi?u ??n prefab ??i di?n cho t?ng ?�.
-    public GameObject rockPrefab;
+    // Tham chiếu đến prefab ProjectileWeapon, đại diện cho quả cầu lửa.
+    public ProjectileWeapon projectile;
 
     [Space(10)]
-    // LayerMask ?? x�c ??nh nh?ng ??i t??ng n�o ???c coi l� k? th�.
+    // LayerMask để xác định những đối tượng nào được coi là kẻ thù.
     public LayerMask whatIsEnemy;
 
     [Space(10)]
-    // Ph?m vi t?n c�ng c?a t?ng ?�.
+    // Phạm vi tấn công của quả cầu lửa.
     public float weaponRange;
 
-    // B? ??m th?i gian cho c�c ??t t?n c�ng.
+    // Bộ đếm thời gian cho các đợt tấn công.
     private float shotCounter;
 
-    // M?c c?p ?? c?a Rocks.
-    public int rocksLevel;
+    // Mức cấp độ của Fireball.
+    public int fireballLevel;
 
     void Awake()
     {
-        // ??m b?o r?ng ch? c� m?t instance duy nh?t c?a Rocks.
+        // Đảm bảo rằng chỉ có một instance duy nhất của Fireball.
         instance = this;
     }
 
     void Start()
     {
-        // Kh?i t?o c�c ch? s? v? kh� khi b?t ??u tr� ch?i.
+        // Khởi tạo các chỉ số vũ khí khi bắt đầu trò chơi.
         SetStats();
     }
 
     void Update()
     {
-        // Ki?m tra xem c� c?n c?p nh?t l?i c�c ch? s? v? kh� kh�ng.
+        // Kiểm tra xem có cần cập nhật lại các chỉ số vũ khí không.
         if (statsUpdated == true)
         {
             statsUpdated = false;
+            // Cập nhật các chỉ số vũ khí.
             SetStats();
         }
 
-        // ??m ng??c th?i gian cho c�c ??t t?n c�ng.
+        // Đếm ngược thời gian cho các đợt tấn công.
         shotCounter -= Time.deltaTime;
 
-        // Ki?m tra n?u b? ??m th?i gian t?n c�ng ?� h?t, th?c hi?n t?n c�ng.
+        // Kiểm tra nếu bộ đếm thời gian tấn công đã hết, thực hiện tấn công.
         if (shotCounter <= 0)
         {
-            // ??t l?i b? ??m th?i gian t?n c�ng.
+            // Đặt lại bộ đếm thời gian tấn công.
             shotCounter = stats[weaponLevel].timeBetweenAttacks;
 
-            // Ki?m tra c�c k? th� trong ph?m vi.
+            // Kiểm tra các kẻ thù trong phạm vi.
             Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, weaponRange * stats[weaponLevel].range, whatIsEnemy);
             if (enemies.Length > 0)
             {
-                // T?n c�ng m?i k? th� trong ph?m vi.
+                // Tấn công mỗi kẻ thù trong phạm vi.
                 for (int i = 0; i < stats[weaponLevel].amount; i++)
                 {
-                    // Ch?n ng?u nhi�n m?t v? tr� g?n k? th� v� t?o ra t?ng ?�.
+                    // Chọn ngẫu nhiên một kẻ thù trong phạm vi.
                     Vector3 targetPosition = enemies[Random.Range(0, enemies.Length)].transform.position;
-                    targetPosition.y += 2f; // ??t t?ng ?� r?i t? tr�n cao.
-                    Instantiate(rockPrefab, targetPosition, Quaternion.identity).gameObject.SetActive(true);
+
+                    // Tính toán hướng bắn quả cầu lửa về phía kẻ thù.
+                    Vector3 direction = targetPosition - transform.position;
+                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    angle -= 90; // Điều chỉnh góc cho đúng hướng.
+
+                    // Cài đặt góc quay của projectile (quả cầu lửa) và tạo mới nó.
+                    projectile.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                    Instantiate(projectile, projectile.transform.position, projectile.transform.rotation).gameObject.SetActive(true);
                 }
 
-                // Ph�t �m thanh khi th?c hi?n t?n c�ng.
-                SFXManager.instance.PlaySFXPitched(4);
-
-                // L�m rung camera khi t?n c�ng.
-                CameraShake.instance.ShakeIt(0.2f, 0.3f);
+                // Phát âm thanh khi thực hiện tấn công.
+                SFXManager.instance.PlaySFXPitched(5);
             }
         }
 
-        // C?p nh?t c?p ?? c?a Rocks.
-        rocksLevel = weaponLevel;
+        // Cập nhật cấp độ của Fireball.
+        fireballLevel = weaponLevel;
     }
 
-    // C?p nh?t c�c ch? s? v? kh� khi c?p ?? thay ??i.
+    // Cập nhật các chỉ số vũ khí khi cấp độ thay đổi.
     void SetStats()
     {
-        // C?p nh?t c�c ch? s? c?a damager (t?ng ?�).
+        // Cập nhật các chỉ số của damager (quả cầu lửa).
         damager.damageAmount = stats[weaponLevel].damage;
         damager.lifeTime = stats[weaponLevel].duration;
         damager.transform.localScale = Vector3.one * stats[weaponLevel].range;
-        // ??t l?i b? ??m th?i gian t?n c�ng.
+        // Đặt lại bộ đếm thời gian tấn công.
         shotCounter = 0f;
+        // Cập nhật tốc độ di chuyển của quả cầu lửa.
+        projectile.moveSpeed = stats[weaponLevel].speed;
     }
 }

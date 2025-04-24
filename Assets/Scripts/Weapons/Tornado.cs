@@ -1,34 +1,44 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Tornado : Weapon
+public class Tonado : Weapon
 {
-    public static Tornado instance;
+    public static Tonado instance;
 
     [Space(10)]
-    public EnemyDamager damager; // X? l� s�t th??ng
-    public GameObject tornadoPrefab; // Prefab c?a c?n l?c xo�y
-    public LayerMask whatIsEnemy; // X�c ??nh k? th�
+    // Tham chiếu đến component Damager để xử lý sát thương.
+    public EnemyDamager damager;
+    // Tham chiếu đến prefab ProjectileWeapon, đại diện cho quả cầu lửa.
+    public ProjectileWeapon projectile;
 
     [Space(10)]
-    public float weaponRange; // Ph?m vi ?nh h??ng c?a c?n l?c
-    public float tornadoSpeed; // T?c ?? di chuy?n c?a c?n l?c
+    // LayerMask để xác định những đối tượng nào được coi là kẻ thù.
+    public LayerMask whatIsEnemy;
 
-    private float shotCounter; // B? ??m th?i gian gi?a c�c l?n t?o l?c
-    public int tornadoLevel; // C?p ?? c?a k? n?ng
+    [Space(10)]
+    // Phạm vi tấn công của quả cầu lửa.
+    public float weaponRange;
+
+    // Bộ đếm thời gian cho các đợt tấn công.
+    private float shotCounter;
+
+    // Mức cấp độ của Fireball.
+    public int fireballLevel;
 
     void Awake()
     {
+        // Đảm bảo rằng chỉ có một instance duy nhất của Fireball.
         instance = this;
     }
 
     void Start()
     {
+        // Khởi tạo các chỉ số vũ khí khi bắt đầu trò chơi.
         SetStats();
     }
 
     void Update()
     {
-        if (statsUpdated)
+        if (statsUpdated == true)
         {
             statsUpdated = false;
             SetStats();
@@ -40,31 +50,43 @@ public class Tornado : Weapon
         {
             shotCounter = stats[weaponLevel].timeBetweenAttacks;
 
-            // T?o c?n l?c xo�y t?i v? tr� ng?u nhi�n g?n ng??i ch?i
-            Vector3 spawnPosition = transform.position + (Vector3)Random.insideUnitCircle * weaponRange;
-            GameObject tornado = Instantiate(tornadoPrefab, spawnPosition, Quaternion.identity);
-            tornado.SetActive(true);
-
-            // C�i ??t c�c th�ng s? cho c?n l?c
-            TornadoWeapon tornadoBehavior = tornado.GetComponent<TornadoWeapon>();
-            if (tornadoBehavior != null)
+            for (int i = 0; i < stats[weaponLevel].amount; i++)
             {
-                tornadoBehavior.Initialize(damager, tornadoSpeed, stats[weaponLevel].duration, stats[weaponLevel].range);
+                // Tạo một hướng ngẫu nhiên
+                Vector3 randomDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+
+                // Tạo projectile tại vị trí hiện tại
+                GameObject newProjectile = Instantiate(projectile.gameObject, transform.position, Quaternion.identity);
+                newProjectile.SetActive(true);
+
+                // Đảm bảo projectile di chuyển theo hướng ngẫu nhiên
+                Rigidbody2D rb = newProjectile.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.velocity = randomDirection * stats[weaponLevel].speed;
+                }
+                else
+                {
+                    Debug.LogError("Rigidbody2D is missing on the Tornado prefab!");
+                }
             }
 
-            // Ph�t �m thanh v� hi?u ?ng
-            SFXManager.instance.PlaySFXPitched(8);
-            CameraShake.instance.ShakeIt(0.2f, 0.3f);
+            SFXManager.instance.PlaySFXPitched(5);
         }
 
-        tornadoLevel = weaponLevel;
+        fireballLevel = weaponLevel;
     }
 
+    // Cập nhật các chỉ số vũ khí khi cấp độ thay đổi.
     void SetStats()
     {
+        // Cập nhật các chỉ số của damager (quả cầu lửa).
         damager.damageAmount = stats[weaponLevel].damage;
         damager.lifeTime = stats[weaponLevel].duration;
         damager.transform.localScale = Vector3.one * stats[weaponLevel].range;
+        // Đặt lại bộ đếm thời gian tấn công.
         shotCounter = 0f;
+        // Cập nhật tốc độ di chuyển của quả cầu lửa.
+        projectile.moveSpeed = stats[weaponLevel].speed;
     }
 }

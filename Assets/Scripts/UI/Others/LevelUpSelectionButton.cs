@@ -20,35 +20,56 @@ public class LevelUpSelectionButton : MonoBehaviour
     // Cập nhật hiển thị của nút với vũ khí đã cho
     public void UpdateButtonDisplay(Weapon theWeapon)
     {
-        // Nếu vũ khí đang hoạt động, hiển thị mô tả nâng cấp và biểu tượng của nó
-        if (theWeapon.gameObject.activeSelf == true)
+        if (theWeapon == null)
         {
-            upgradeDescText.text = theWeapon.stats[theWeapon.weaponLevel].upgradeText;
-            weaponIcon.sprite = theWeapon.icon;
+            Debug.LogError("The weapon passed to UpdateButtonDisplay is null!");
+            return;
+        }
 
+        if (theWeapon.stats == null || theWeapon.stats.Count <= theWeapon.weaponLevel)
+        {
+            Debug.LogError($"Weapon stats are null or weaponLevel ({theWeapon.weaponLevel}) is out of range for weapon: {theWeapon.name}");
+            return;
+        }
+
+        var weaponStats = theWeapon.stats[theWeapon.weaponLevel];
+        if (weaponStats == null)
+        {
+            Debug.LogError($"Weapon stats at level {theWeapon.weaponLevel} are null for weapon: {theWeapon.name}");
+            return;
+        }
+
+        if (theWeapon.gameObject.activeSelf)
+        {
+            upgradeDescText.text = weaponStats.upgradeText;
+            weaponIcon.sprite = theWeapon.icon;
             nameLevelText.text = theWeapon.name;
         }
         else
         {
-            // Nếu vũ khí không hoạt động nhưng có thể mở khóa, hiển thị văn bản mở khóa và biểu tượng của nó
             if (theWeapon.tag != "PlayerUpdate")
             {
                 upgradeDescText.text = "UNLOCK\n" + theWeapon.name;
                 weaponIcon.sprite = theWeapon.icon;
-
                 nameLevelText.text = theWeapon.name;
             }
             else
             {
-                // Nếu vũ khí là cập nhật người chơi, hiển thị mô tả nâng cấp chung
                 upgradeDescText.text = "+10%";
                 weaponIcon.sprite = theWeapon.icon;
-
                 nameLevelText.text = theWeapon.name;
             }
         }
 
-        // Gán vũ khí hiện tại cho nút
+        if (theWeapon.icon != null)
+        {
+            weaponIcon.sprite = theWeapon.icon;
+        }
+        else
+        {
+            Debug.LogWarning("Weapon icon is NULL for: " + theWeapon.name);
+        }
+
         assignedWeapon = theWeapon;
     }
 

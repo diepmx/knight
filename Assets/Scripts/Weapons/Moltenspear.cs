@@ -6,15 +6,14 @@ public class Moltenspear : Weapon
 
     [Space(10)]
     public EnemyDamager damager; // X? lý sát th??ng
-    public GameObject spearPrefab; // Prefab c?a ng?n giáo dung nham
+    public GameObject geyserPrefab; // Prefab c?a c?t n??c
     public LayerMask whatIsEnemy; // Xác ??nh k? thù
 
     [Space(10)]
-    public float weaponRange; // Ph?m vi phóng c?a ng?n giáo
-    public float spearSpeed; // T?c ?? bay c?a ng?n giáo
+    public float weaponRange; // Ph?m vi xu?t hi?n c?a c?t n??c
 
-    private float shotCounter; // B? ??m th?i gian gi?a các l?n phóng giáo
-    public int moltenspearLevel; // C?p ?? c?a k? n?ng
+    private float shotCounter; // B? ??m th?i gian gi?a các l?n t?o c?t n??c
+    public int geyserLevel; // C?p ?? c?a k? n?ng
 
     void Awake()
     {
@@ -40,24 +39,24 @@ public class Moltenspear : Weapon
         {
             shotCounter = stats[weaponLevel].timeBetweenAttacks;
 
-            // T?o ng?n giáo dung nham t?i v? trí c?a ng??i ch?i
-            Vector3 spawnPosition = transform.position;
-            GameObject spear = Instantiate(spearPrefab, spawnPosition, Quaternion.identity);
-            spear.SetActive(true);
+            // T?o c?t n??c t?i v? trí ng?u nhiên g?n ng??i ch?i
+            Vector3 spawnPosition = transform.position + (Vector3)Random.insideUnitCircle * weaponRange;
+            GameObject geyser = Instantiate(geyserPrefab, spawnPosition, Quaternion.identity);
+            geyser.SetActive(true);
 
-            // Cài ??t các thông s? cho ng?n giáo
-            MoltenspearProjectile spearProjectile = spear.GetComponent<MoltenspearProjectile>();
-            if (spearProjectile != null)
+            // Cài ??t các thông s? cho c?t n??c
+            WaterGeyserWeapon geyserBehavior = geyser.GetComponent<WaterGeyserWeapon>();
+            if (geyserBehavior != null)
             {
-                spearProjectile.Initialize(damager, spearSpeed, stats[weaponLevel].range, stats[weaponLevel].damage);
+                geyserBehavior.Initialize(damager, stats[weaponLevel].duration, stats[weaponLevel].range);
             }
 
             // Phát âm thanh và hi?u ?ng
-            SFXManager.instance.PlaySFXPitched(10);
-            CameraShake.instance.ShakeIt(0.1f, 0.2f);
+            SFXManager.instance.PlaySFXPitched(9);
+            CameraShake.instance.ShakeIt(0.2f, 0.3f);
         }
 
-        moltenspearLevel = weaponLevel;
+        geyserLevel = weaponLevel;
     }
 
     void SetStats()
