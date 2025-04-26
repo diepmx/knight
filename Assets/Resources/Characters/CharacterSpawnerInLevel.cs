@@ -6,13 +6,12 @@ public class CharacterSpawnerInLevel : MonoBehaviour
     void Start()
     {
         string selectedCharacterName = PlayerDataCarrier.Instance?.GetSelectedCharacterName();
-        //if (string.IsNullOrEmpty(selectedCharacterName))
-        //{
-        //    Debug.LogError("Không tìm thấy tên nhân vật đã chọn!");
-        //     // Thay bằng tên nhân vật mặc định của bạn
-        //    return;
-        //}
-        selectedCharacterName = "ArchDemon";
+        if (string.IsNullOrEmpty(selectedCharacterName))
+        {
+            Debug.LogError("Không tìm thấy tên nhân vật đã chọn!");
+            return;
+        }
+        //selectedCharacterName = "ArchDemon";
 
         // Tìm tất cả nhân vật bị ẩn trong scene có PlayerHealthController
         PlayerHealthController[] allCharacters = Resources.FindObjectsOfTypeAll<PlayerHealthController>();
